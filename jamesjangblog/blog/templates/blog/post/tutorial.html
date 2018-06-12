@@ -16,9 +16,9 @@
 {% block side %}
 <div class ="col-md-4">
         <h2 style="text-align: right; margin-top: 20px; margin-right:20px;color:black;font-family:Code-Bolt;">Recent Posts</h2>
-        {% for post in posts %}
+        {% for tutpost in tutpost %}
           <p class="medium" style ="text-align: left;  margin-left: 110px; margin-right:20px;font-family:Code-Bolt;"> 
-            <a href="{{ post.get_absolute_url }}">{{post.title}} << {{post.publish.month}}, {{post.publish.day}} ,  {{post.publish.year}};  </a></p>
+            <a href="{{ tutpost.get_tutorial_url}}">{{tutpost.title}} << {{tutpost.publish.month}}, {{tutpost.publish.day}} ,  {{tutpost.publish.year}};  </a></p>
         {%endfor%}
 </div>
 {% endblock %}

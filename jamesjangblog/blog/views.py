@@ -8,16 +8,15 @@ def post_list_view(request):
 
 
 def post_detail_view(request, year, month, day, post):
+    posts = Post.published.all()
+    tutpost = Post.tutorialposts.all()
     post = get_object_or_404(Post, slug=post, publish__year=year, publish__month=month,
                              publish__day=day)
-    return render(request, 'blog/post/detail.html', {'post': post})
+    return render(request, 'blog/post/detail.html',  {'posts':posts, 'post' : post, 'tutpost' : tutpost})
+
 
 def archived_post(request, post):
     post = get_object_or_404(Post, slug = post)
     return render(request, {'archive' : post})
     
 
-#def post_list_view_tutorial(request):
- #   posts = Post.tutorial.all()
-  #  return render(request, 'blog/post/tutorial.html', {'posts' : posts})
-2
