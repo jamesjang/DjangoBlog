@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class ="blog-container">
+      <div class ="banner-image">
+      </div>
+
+        <div class ="navbar-container">
+            <ul>
+                <li><a href=/home/>Home</a></li>
+                <li><a href=/blog/>Blog</a></li>
+                <li><a href="/tutorials/">Tutorials</a></li>
+                <li><a href="#about">About</a></li>
+            </ul> 
+        </div>
+
+        {% block home %}
+        {% endblock %}
+
+
+     
+        <div class="row" style="border-left: 3px">
+          <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+          </div>
+          {% block side %}
+
+          {% endblock %}
+
+
+          
+      </div>
+
+    </div>
+    <div class ="footer-container">
+
+        <div class="footer-text">
+          <div class ="row">
+          <div class ="col-md-8">
+          <a href ="#" style="margin-right:10px;">Home </a>
+          <a href ="#" style="margin-right:10px;">Blog </a>
+          <a href ="#" style="margin-right:10px;">Tutorials </a>
+          <a href ="#" style="margin-right:10px;">About </a>
+          </div>
+
+          <div class ="col-md-4">
+              <p>Copyright James Jang 2018</p>  
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
