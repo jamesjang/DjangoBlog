@@ -1,0 +1,19 @@
+{% extends "blog/master.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h3 style ="font-family:Code-Bolt; margin-top: 30px;">{{ post.title }}</h3>
+    <p class="small">Published {{ post.publish }} by {{ post.author }}</p>
+    <p>{{ post.body|linebreaks }}</p>
+{% endblock %}
+
+{% block side %}
+<div class ="col-md-4">
+        <h2 style="text-align: right; margin-top: 20px; margin-right:20px;color:black;font-family:Code-Bolt;">Recent Posts</h2>
+        <p>test</p>
+        {% for posts in posts %}
+         
+        {%endfor%}
+</div>
+{% endblock %}
