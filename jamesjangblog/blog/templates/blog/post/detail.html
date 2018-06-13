@@ -15,5 +15,33 @@
           <p class="medium" style ="text-align: left;  margin-left: 110px; margin-right:20px;font-family:Code-Bolt;"> 
             <a href="{{ posts.get_absolute_url }}">{{posts.title}} << {{posts.publish.month}}, {{posts.publish.day}} ,  {{posts.publish.year}};  </a></p>
         {%endfor%}
+
 </div>
 {% endblock %}
+
+{% block comment %}
+<div class="col-sm-8 comment-container">
+    <h3 style ="font-family:Code-Bolt; font-size: 40px; margin-top: 20px; margin-bottom: 20px;color:whitesmoke;"> Comments </h3>
+    {% for comment in post.comments.all %}
+        <div class="comment">
+            <div class ="comment-text">
+                <div class="date">{{ comment.created_date }}</div>
+                <strong> Posted by: {{ comment.author }}</strong>
+                <p>{{ comment.text|linebreaks }} <br></p>
+            </div>
+        </div>
+    {% empty %}
+        <p style ="color:whitesmoke;">No comments here yet :(</p>
+    {% endfor %}
+
+    <form method ='POST' style ="margin-top:100px; margin-bottom: 30px;">{%csrf_token%}
+        {{form.non_field_errors }}
+        <p style ="color:whitesmoke; margin-bottom: 2px;"> Author: </p>
+        {{form.author}} <br><br>
+        <p style ="color:whitesmoke; margin-bottom: 2px;"> Message: </p>
+        {{form.text}} <br><br>
+        <button type ='submit' class="btnc">Post Comment</button>
+    </form>
+</div>
+{% endblock %}
+

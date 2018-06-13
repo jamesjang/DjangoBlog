@@ -9017,7 +9017,9 @@ a.text-dark:hover, a.text-dark:focus {
   margin-left: auto;
   margin-right:auto;
 }
+
 .navbar-container{
+  z-index: 99999;
   width: 100%;
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -9158,5 +9160,30 @@ li a:link {
   color: white;
 }
 
+.comment {
+  margin: 20px 0px 20px 5px;
+  background-color: #CCCCCC;
+}
 
+.comment-container{
+  background-color: #062c33;
+  margin-top: 100px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.comment-text{
+  margin: 10px 10px 10px 10px;
+}
+.btnc{
+border: none;
+display: inline-block;
+text-transform: capitalize;
+font-size: 12px;
+text-shadow: none;
+cursor: pointer;
+margin: 0 0 20px;
+padding: 5px 15px;
+}
 /*# sourceMappingURL=bootstrap.css.map */
