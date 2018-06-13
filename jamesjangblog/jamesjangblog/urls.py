@@ -26,8 +26,11 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', include('home.urls', namespace='index')),
     url(r'blog/', include('blog.urls', namespace='blog')),
     url(r'home/', include('home.urls', namespace='home')),
   #  url(r'about/', include('about.urls', namespace='about')),
     url(r'tutorials/', include('tutorials.urls', namespace='tutorials')),
+    url(r'^tinymce/', include('tinymce.urls')),
+    
 ]
